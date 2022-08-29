@@ -8,9 +8,9 @@ const listTodos = async () => {
 //   return await Todo.findById(contactId);
 // };
 
-// const removeContact = async (contactId) => {
-//   return await Todo.findByIdAndDelete(contactId);
-// };
+const removeContact = async (todoId) => {
+  return await Todo.findByIdAndDelete(todoId);
+};
 
 const addTodo = async (body) => {
   return await Todo.create({ ...body });
@@ -27,7 +27,7 @@ const addTodo = async (body) => {
 module.exports = {
   listTodos,
   // getContactById,
-  // removeContact,
+  removeContact,
   addTodo,
   // updateContact,
   // toggleComplete
