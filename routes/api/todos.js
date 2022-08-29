@@ -7,7 +7,7 @@ const {
   listTodos,
   // getContactById,
   addTodo,
-  removeContact,
+  // removeContact,
   // updateContact,
   // updateFav,
 } = require("../../controllers/todos");
@@ -38,17 +38,17 @@ router.post("/", async (req, res, next) => {
   res.status(201).json({ data: await addTodo(req.body) });
 });
 
-router.delete("/:todoId", async (req, res, next) => {
-  const { todoId } = req.params;
-  const idExists = Todo.findById(todoId);
-  if (!idExists) {
-    return res.status(404).json({
-      message: "not found",
-    });
-  }
-  await removeContact(todoId);
-  res.status(200).json({ message: "contact deleted" });
-});
+// router.delete("/:todoId", async (req, res, next) => {
+//   const { todoId } = req.params;
+//   const idExists = Todo.findById(todoId);
+//   if (!idExists) {
+//     return res.status(404).json({
+//       message: "not found",
+//     });
+//   }
+//   await removeContact(todoId);
+//   res.status(200).json({ message: "contact deleted" });
+// });
 
 // router.put("/:conId", async (req, res, next) => {
 //   const { conId } = req.params;
