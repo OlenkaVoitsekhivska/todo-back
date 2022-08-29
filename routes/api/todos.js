@@ -15,7 +15,7 @@ const { postSchema, putSchema } = require("../../validation/validation");
 
 router.get("/", async (req, res, next) => {
   const data = await listTodos();
-  res.status(200).json({ data });
+  res.status(200).json(data);
 });
 
 // router.get("/:id", async (req, res, next) => {
